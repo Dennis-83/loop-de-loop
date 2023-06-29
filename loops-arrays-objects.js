@@ -16,8 +16,10 @@ const scores = [
 // 66ç
 // ==========================================
 
-
-
+for (let i = 0; i < scores.length; i++) {
+    const student = scores[i];
+    console.log(student.score);
+}
 
 
 // ==========================================
@@ -32,8 +34,20 @@ const scores = [
 // D
 // ==========================================
 
-
-
+for (let i = 0; i < scores.length; i++) {
+    const score = scores[i].score;
+    if ( score < 60 ) {
+        console.log("F");
+    } else if ( score < 70 ) {
+        console.log("D");
+    } else if ( score < 80) {
+        console.log("C");
+    } else if ( score < 90) {
+        console.log("B");
+    } else {
+        console.log("A");
+    }
+}
 
 
 // ==========================================
@@ -49,9 +63,30 @@ const scores = [
 //  ];
 // ==========================================
 
+// console.log(scores);
 
+for (let i = 0; i < scores.length; i++) {
+    const student = scores[i];
+    const score = student.score;
+    if (score < 60) {
+        student.grade = "F";
+        // console.log("F");
+    } else if (score < 70) {
+        student.grade = "D";
+        // console.log("D");
+    } else if (score < 80) {
+        student.grade = "C";
+        // console.log("C");
+    } else if (score < 90) {
+        student.grade = "B";
+        // console.log("B");
+    } else {
+        student.grade = "A";
+        // console.log("A");
+    }
+}
 
-
+console.log(scores);
 
 // ==========================================
 // Opdracht 2
@@ -63,6 +98,16 @@ const NOVIEmployees = [
     {firstName: 'Tessa', lastName: 'Steur'},
     {firstName: 'Mark', lastName: 'Rensen'},
 ];
+
+// console.log(NOVIEmployees);
+
+for (let i = 0; i < NOVIEmployees.length; i++) {
+    const employee = NOVIEmployees[i];
+    const email = `${employee.firstName}.${employee.lastName}@novi.nl`
+    NOVIEmployees[i].email = email.toLowerCase();
+}
+
+console.log(NOVIEmployees);
 
 // Bij NOVI horen de e-mailadressen altijd in het volgende format: voornaam.achternaam@novi.nl
 // Vóór het script zie je de originele objecten,
@@ -76,15 +121,9 @@ const NOVIEmployees = [
 // ==========================================
 
 
-
-
-
-
 // Opdracht 2-BONUS
 // Lukt het je om ervoor te zorgen dat alle e-mailadressen in lowercase letters komen te staan? Dit heb je nog niet geleerd, maar google is your best friend...
 // ==========================================
-
-
 
 
 // ==========================================
@@ -113,6 +152,35 @@ const students = [
     {name: 'Aicha', city: 'Utrecht', zipCode: '3514', neighborhood: null},
     {name: 'Karima', city: 'Utrecht', zipCode: '3531', neighborhood: null},
 ];
+
+for (let i = 0; i < students.length; i++) {
+    const student = students[i];
+    switch (student.zipCode) {
+        case "3513":
+            students[i].neighborhood = "Pijlsweerd";
+            break;
+        case "3514":
+            students[i].neighborhood = "Vogelenbuurt";
+            break;
+        case "3512":
+            students[i].neighborhood = "Binnenstad";
+            break;
+        case "3531":
+            students[i].neighborhood = "Lombok";
+            break;
+        case "3572":
+            students[i].neighborhood = "Wittevrouwen";
+            break;
+        case "3581":
+            students[i].neighborhood = "Oudwijk";
+            break;
+        case "3583":
+            students[i].neighborhood = "Schildersbuurt";
+            break;
+    }
+}
+
+console.log(students);
 
 // Verwachte uitkomsten:
 // [
